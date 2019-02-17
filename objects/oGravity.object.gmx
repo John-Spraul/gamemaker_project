@@ -51,22 +51,6 @@
             <string>x = My_Planet.x
 y = My_Planet.y
 
-PlayerTouchingMe = instance_place(x, y, oPlayer);
-
-with My_Planet {
-    PlayerTouchingPlanet = instance_place(x, y, oPlayer)
-    
-    if (!PlayerTouchingPlanet &amp;&amp; other.PlayerTouchingMe){
-        other.PlayerTouchingMe = 0;
-        
-        other.PlayerTouchingMe.direction = point_direction(other.PlayerTouchingMe.x, other.PlayerTouchingMe.y, x, y);
-        other.PlayerTouchingMe.speed = 8;
-    } else if (PlayerTouchingPlanet) {
-        other.PlayerTouchingMe.speed = speed;
-        other.PlayerTouchingMe.MyState = "GravitronMode"
-    }
-}
-
 /*if (PlayerTouchingMe) {
     instance_destroy(My_Planet);
 }*/

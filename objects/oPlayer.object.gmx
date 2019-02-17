@@ -52,7 +52,25 @@ MyState = "FreeRoam"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if MyState == "FreeRoam"{
+            <string>
+GravityTouchingMe = instance_place(x, y, oGravity)
+
+if (GravityTouchingMe) {
+    MyState = "GravitronMode"
+    PlanetTouchingMe = instance_place(x, y, oPlanet)
+    if (PlanetTouchingMe) {
+        speed = 0
+        direction = point_direction(GravityTouchingMe.My_Planet.x, GravityTouchingMe.My_Planet.y, x, y)
+    } else {
+        speed = 3
+        direction = point_direction(x, y, GravityTouchingMe.My_Planet.x, GravityTouchingMe.My_Planet.y)
+    }
+} else {
+    MyState = "FreeRoam"
+    speed = 0
+}
+
+if MyState == "FreeRoam"{
     /* Movement */
     
     if keyboard_check(ord('W')) {
