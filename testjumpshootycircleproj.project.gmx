@@ -7,11 +7,18 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sPlayer</sprite>
+    <sprite>sprites\sPlanet</sprite>
+    <sprite>sprites\sGravity</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bPlaceholder</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\oPlayer</object>
+    <object>objects\oGame</object>
+    <object>objects\oPlanet</object>
+    <object>objects\oGravity</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
