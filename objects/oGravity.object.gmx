@@ -61,9 +61,9 @@ with My_Planet {
         
         other.PlayerTouchingMe.direction = point_direction(other.PlayerTouchingMe.x, other.PlayerTouchingMe.y, x, y);
         other.PlayerTouchingMe.speed = 8;
-        other.PlayerTouchingMe.MySpeed = 0;
     } else if (PlayerTouchingPlanet) {
-        other.PlayerTouchingMe.speed = 5;
+        other.PlayerTouchingMe.speed = speed;
+        other.PlayerTouchingMe.MyState = "GravitronMode"
     }
 }
 

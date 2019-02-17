@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>instance_create(x, y, oGravity);
 
-speed = 5;
+speed = 0;
 
 direction = random(360);
 

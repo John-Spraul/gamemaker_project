@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>MySpeed = 13
+
+
+// When not touching a gravity source, we can move freely!
+MyState = "FreeRoam"
 </string>
           </argument>
         </arguments>
@@ -48,34 +52,64 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/* Movement */
-
-if keyboard_check(ord('W')) {
-    y = y - MySpeed
-}
-
-if keyboard_check(ord('S')) {
-    y = y + MySpeed
-}
-
-if keyboard_check(ord('D')) {
-    x = x + MySpeed
-}
-
-if keyboard_check(ord('A')) {
-    x = x - MySpeed
-}
-
-if (x &lt; 0) {
-    x = room_width;
-} else if (x &gt; room_width) {
-    x = 0;
-}
-
-if (y &lt; 0) {
-    y = room_height;
-} else if (y &gt; room_height) {
-    y = 0;
+            <string>if MyState == "FreeRoam"{
+    /* Movement */
+    
+    if keyboard_check(ord('W')) {
+        y = y - MySpeed
+    }
+    
+    if keyboard_check(ord('S')) {
+        y = y + MySpeed
+    }
+    
+    if keyboard_check(ord('D')) {
+        x = x + MySpeed
+    }
+    
+    if keyboard_check(ord('A')) {
+        x = x - MySpeed
+    }
+    
+    if (x &lt; 0) {
+        x = room_width;
+    } else if (x &gt; room_width) {
+        x = 0;
+    }
+    
+    if (y &lt; 0) {
+        y = room_height;
+    } else if (y &gt; room_height) {
+        y = 0;
+    }   
+} else if MyState == "GravitronMode"{
+     if keyboard_check(ord('W')) {
+        y = y - MySpeed
+    }
+    
+    if keyboard_check(ord('S')) {
+        y = y + MySpeed
+    }
+    
+    if keyboard_check(ord('D')) {
+        x = x + MySpeed
+    }
+    
+    if keyboard_check(ord('A')) {
+        x = x - MySpeed
+    }
+    
+    if (x &lt; 0) {
+        x = room_width;
+    } else if (x &gt; room_width) {
+        x = 0;
+    }
+    
+    if (y &lt; 0) {
+        y = room_height;
+    } else if (y &gt; room_height) {
+        y = 0;
+    } 
 }
 </string>
           </argument>
